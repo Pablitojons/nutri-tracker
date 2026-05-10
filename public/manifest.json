@@ -1,0 +1,20 @@
+{
+  "name": "Nutri Tracker",
+  "short_name": "Nutri",
+  "description": "Suivi nutritionnel : tableau de bord, menu du jour et scan d’étiquettes.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a1f0a",
+  "theme_color": "#0a1f0a",
+  "icons": [
+    {
+      "src": "/icon-source.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
