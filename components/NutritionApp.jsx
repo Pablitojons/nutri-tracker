@@ -72,9 +72,9 @@ function MacroBar({ label, current, target, unit }) {
           {unit ? ` ${unit}` : ""}
         </span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-black/45 ring-1 ring-[#4a7c2a]/25">
+      <div className="h-2 overflow-hidden rounded-full bg-black/45 ring-1 ring-[#945474]/25">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-[#4a7c2a] via-[#6fa83a] to-[#c8f542] transition-[width] duration-500 ease-out"
+          className="h-full rounded-full bg-gradient-to-r from-[#945474] via-[#c875a8] to-[#ff96c9] transition-[width] duration-500 ease-out"
           style={{ width: `${pct}%` }}
           role="progressbar"
           aria-valuenow={Math.round(pct)}
@@ -93,8 +93,8 @@ function TabButton({ active, onClick, children }) {
       onClick={onClick}
       className={`flex-1 rounded-xl px-2 py-2.5 text-center text-xs font-semibold transition sm:text-sm ${
         active
-          ? "bg-gradient-to-br from-[#4a7c2a]/90 to-[#1a3d1a] text-white shadow-[0_0_20px_-6px_rgba(200,245,66,0.45)] ring-1 ring-[#c8f542]/35"
-          : "bg-black/25 text-zinc-400 ring-1 ring-[#4a7c2a]/20 hover:text-zinc-200"
+          ? "bg-gradient-to-br from-[#945474]/90 to-[#321f2f] text-white shadow-[0_0_20px_-6px_rgba(255,148,208,0.45)] ring-1 ring-[#ff96c9]/35"
+          : "bg-black/25 text-zinc-400 ring-1 ring-[#945474]/20 hover:text-zinc-200"
       }`}
     >
       {children}
@@ -348,13 +348,13 @@ export default function NutritionApp() {
 
   return (
     <div className="flex min-h-dvh flex-1 flex-col pb-28">
-      <header className="sticky top-0 z-40 border-b border-[#4a7c2a]/25 bg-[#0a1f0a]/75 px-5 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-[#945474]/25 bg-[#120a10]/75 px-5 py-5 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-lg flex-col gap-2">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c8f542]/80">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#ff96c9]/80">
             Journal du jour
           </p>
           <div className="flex items-end justify-between gap-3">
-            <h1 className="bg-gradient-to-r from-[#e8fde0] via-[#c8f542] to-[#7fb84a] bg-clip-text text-2xl font-extrabold tracking-tight text-transparent sm:text-3xl">
+            <h1 className="bg-gradient-to-r from-[#fff0f7] via-[#ff96c9] to-[#cc6b9e] bg-clip-text text-2xl font-extrabold tracking-tight text-transparent sm:text-3xl">
               Nutri Tracker
             </h1>
             <time
@@ -370,7 +370,7 @@ export default function NutritionApp() {
       <main className="mx-auto flex w-full max-w-lg flex-1 flex-col gap-6 px-5 py-6">
         {tab === "dashboard" && (
           <>
-            <section className="card-organic rounded-3xl border border-[#4a7c2a]/35 bg-[#0f2210]/72 p-5 shadow-[0_0_32px_-14px_rgba(200,245,66,0.35)] backdrop-blur-md">
+            <section className="card-organic rounded-3xl border border-[#945474]/35 bg-[#1a141c]/72 p-5 shadow-[0_0_32px_-14px_rgba(255,148,208,0.35)] backdrop-blur-md">
               <div className="mb-5 flex flex-col gap-1">
                 <h2 className="text-lg font-semibold text-zinc-50">Macros du jour</h2>
                 <p className="text-xs text-zinc-500">
@@ -402,18 +402,18 @@ export default function NutritionApp() {
             )}
 
             {!proteinLow && totals.protein > 0 && (
-              <div className="rounded-3xl border border-[#4a7c2a]/35 bg-[#163018]/55 px-5 py-3 text-sm text-lime-100/90">
+              <div className="rounded-3xl border border-[#945474]/35 bg-[#231a26]/55 px-5 py-3 text-sm text-pink-100/90">
                 Objectif protéines atteint ou dépassé pour aujourd’hui. Continuez ainsi.
               </div>
             )}
 
-            <section className="card-organic rounded-3xl border border-[#4a7c2a]/35 bg-[#0f2210]/72 p-5 shadow-[0_0_32px_-14px_rgba(200,245,66,0.28)] backdrop-blur-md">
+            <section className="card-organic rounded-3xl border border-[#945474]/35 bg-[#1a141c]/72 p-5 shadow-[0_0_32px_-14px_rgba(255,148,208,0.28)] backdrop-blur-md">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h2 className="text-lg font-semibold text-zinc-50">Journal alimentaire</h2>
                 <button
                   type="button"
                   onClick={() => loadJournal()}
-                  className="rounded-lg border border-[#4a7c2a]/40 bg-black/30 px-3 py-1.5 text-xs font-semibold text-zinc-200 hover:border-[#c8f542]/45 hover:text-white"
+                  className="rounded-lg border border-[#945474]/40 bg-black/30 px-3 py-1.5 text-xs font-semibold text-zinc-200 hover:border-[#ff96c9]/45 hover:text-white"
                 >
                   Actualiser
                 </button>
@@ -441,14 +441,14 @@ export default function NutritionApp() {
                   if (!rows.length) return null;
                   return (
                     <div key={meal}>
-                      <h3 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-[#c8f542]/80">
+                      <h3 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-[#ff96c9]/80">
                         {MEAL_LABELS[meal]}
                       </h3>
                       <ul className="space-y-3">
                         {rows.map((row) => (
                           <li
                             key={row.id}
-                            className="rounded-2xl border border-[#4a7c2a]/22 bg-black/35 px-4 py-3"
+                            className="rounded-2xl border border-[#945474]/22 bg-black/35 px-4 py-3"
                           >
                             <div className="flex items-start justify-between gap-3">
                               <span className="flex-1 text-sm font-medium text-zinc-100">
@@ -475,7 +475,7 @@ export default function NutritionApp() {
 
         {tab === "menu" && (
           <div className="flex flex-col gap-5">
-            <section className="card-organic rounded-3xl border border-[#4a7c2a]/35 bg-[#0f2210]/72 p-5 shadow-[0_0_32px_-14px_rgba(200,245,66,0.28)] backdrop-blur-md">
+            <section className="card-organic rounded-3xl border border-[#945474]/35 bg-[#1a141c]/72 p-5 shadow-[0_0_32px_-14px_rgba(255,148,208,0.28)] backdrop-blur-md">
               <h2 className="mb-4 text-lg font-semibold text-zinc-50">Contraintes alimentaires</h2>
               <div className="flex flex-wrap gap-2">
                 {CONSTRAINT_OPTIONS.map((c) => {
@@ -487,8 +487,8 @@ export default function NutritionApp() {
                       onClick={() => toggleConstraint(c.id)}
                       className={`rounded-full border px-3 py-2 text-xs font-semibold transition ${
                         active
-                          ? "border-[#c8f542]/50 bg-[#c8f542]/12 text-[#f2ffbf] shadow-[0_0_18px_-8px_rgba(200,245,66,0.45)]"
-                          : "border-[#4a7c2a]/35 bg-black/35 text-zinc-400 hover:border-[#4a7c2a]/55 hover:text-zinc-200"
+                          ? "border-[#ff96c9]/50 bg-[#ff96c9]/12 text-[#fff0fb] shadow-[0_0_18px_-8px_rgba(255,148,208,0.45)]"
+                          : "border-[#945474]/35 bg-black/35 text-zinc-400 hover:border-[#945474]/55 hover:text-zinc-200"
                       }`}
                     >
                       {c.label}
@@ -504,7 +504,7 @@ export default function NutritionApp() {
                   value={menuNotes}
                   onChange={(e) => setMenuNotes(e.target.value)}
                   placeholder="Allergie, préférences de goût, budget, saison…"
-                  className="mt-2 w-full resize-y rounded-2xl border border-[#4a7c2a]/35 bg-black/35 px-4 py-3 text-sm text-zinc-100 outline-none ring-[#c8f542]/0 transition placeholder:text-zinc-600 focus:border-[#c8f542]/45 focus:ring-2 focus:ring-[#c8f542]/25"
+                  className="mt-2 w-full resize-y rounded-2xl border border-[#945474]/35 bg-black/35 px-4 py-3 text-sm text-zinc-100 outline-none ring-[#ff96c9]/0 transition placeholder:text-zinc-600 focus:border-[#ff96c9]/45 focus:ring-2 focus:ring-[#ff96c9]/25"
                 />
               </label>
 
@@ -512,7 +512,7 @@ export default function NutritionApp() {
                 type="button"
                 disabled={generating}
                 onClick={handleGenerateMenu}
-                className="mt-5 w-full rounded-2xl bg-gradient-to-r from-[#4a7c2a] to-[#87b92d] px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-[0_0_32px_-10px_rgba(200,245,66,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-5 w-full rounded-2xl bg-gradient-to-r from-[#945474] to-[#f067b8] px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-[0_0_32px_-10px_rgba(255,148,208,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {generating ? "Génération en cours…" : "Générer le menu (Gemini)"}
               </button>
@@ -525,19 +525,19 @@ export default function NutritionApp() {
             </section>
 
             {generatedMenu && (
-              <section className="card-organic rounded-3xl border border-[#4a7c2a]/35 bg-[#0f2210]/72 p-5 shadow-[0_0_32px_-14px_rgba(200,245,66,0.28)] backdrop-blur-md">
+              <section className="card-organic rounded-3xl border border-[#945474]/35 bg-[#1a141c]/72 p-5 shadow-[0_0_32px_-14px_rgba(255,148,208,0.28)] backdrop-blur-md">
                 <h3 className="mb-4 text-base font-semibold text-zinc-50">Menu proposé</h3>
                 <div className="space-y-5">
                   {(generatedMenu.meals || []).map((block, i) => {
                     const mt = normalizeMealType(block.meal_type);
                     return (
                       <div key={`${mt}-${i}`}>
-                        <h4 className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#c8f542]/75">
+                        <h4 className="mb-2 text-[11px] font-bold uppercase tracking-widest text-[#ff96c9]/75">
                           {MEAL_LABELS[mt]}
                         </h4>
                         <ul className="space-y-2">
                           {(block.items || []).map((it, j) => (
-                            <li key={j} className="rounded-xl border border-[#4a7c2a]/22 bg-black/35 px-3 py-2 text-sm">
+                            <li key={j} className="rounded-xl border border-[#945474]/22 bg-black/35 px-3 py-2 text-sm">
                               <span className="font-medium text-zinc-100">{it.food_name}</span>
                               <span className="mt-1 block font-[family-name:var(--font-dm-mono)] text-[11px] tabular-nums text-zinc-500">
                                 {Math.round(num(it.kcal))} kcal · P {num(it.protein)} · G {num(it.carbs)} · L{" "}
@@ -555,7 +555,7 @@ export default function NutritionApp() {
                   type="button"
                   disabled={addingMenu}
                   onClick={handleAddMenuToJournal}
-                  className="mt-6 w-full rounded-2xl border border-[#c8f542]/40 bg-transparent px-5 py-3.5 text-sm font-bold text-[#e8fdd0] shadow-[0_0_24px_-12px_rgba(200,245,66,0.45)] ring-1 ring-[#4a7c2a]/30 transition hover:bg-[#c8f542]/10 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="mt-6 w-full rounded-2xl border border-[#ff96c9]/40 bg-transparent px-5 py-3.5 text-sm font-bold text-[#ffe8f5] shadow-[0_0_24px_-12px_rgba(255,148,208,0.45)] ring-1 ring-[#945474]/30 transition hover:bg-[#ff96c9]/10 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {addingMenu ? "Ajout…" : "Ajouter le menu au journal"}
                 </button>
@@ -566,12 +566,12 @@ export default function NutritionApp() {
 
         {tab === "scanner" && (
           <div className="flex flex-col gap-5">
-            <section className="card-organic rounded-3xl border border-[#4a7c2a]/35 bg-[#0f2210]/72 p-5 shadow-[0_0_32px_-14px_rgba(200,245,66,0.28)] backdrop-blur-md">
+            <section className="card-organic rounded-3xl border border-[#945474]/35 bg-[#1a141c]/72 p-5 shadow-[0_0_32px_-14px_rgba(255,148,208,0.28)] backdrop-blur-md">
               <h2 className="mb-4 text-lg font-semibold text-zinc-50">Scanner une photo</h2>
               <p className="mb-4 text-xs leading-relaxed text-zinc-500">
                 Étiquette, emballage ou plat repérable. La photo est redimensionnée côté appareil pour limiter la taille.
               </p>
-              <label className="block cursor-pointer rounded-2xl border border-dashed border-[#4a7c2a]/45 bg-black/35 px-4 py-8 text-center text-sm font-semibold text-zinc-300 transition hover:border-[#c8f542]/40 hover:text-[#e8fdd0]">
+              <label className="block cursor-pointer rounded-2xl border border-dashed border-[#945474]/45 bg-black/35 px-4 py-8 text-center text-sm font-semibold text-zinc-300 transition hover:border-[#ff96c9]/40 hover:text-[#ffe8f5]">
                 <span className="block">Choisis une image</span>
                 <input type="file" accept="image/*" capture="environment" className="sr-only" onChange={onPickImage} />
               </label>
@@ -583,7 +583,7 @@ export default function NutritionApp() {
                   width={800}
                   height={512}
                   unoptimized
-                  className="mt-4 max-h-64 w-full rounded-2xl border border-[#4a7c2a]/30 object-cover"
+                  className="mt-4 max-h-64 w-full rounded-2xl border border-[#945474]/30 object-cover"
                 />
               )}
 
@@ -591,7 +591,7 @@ export default function NutritionApp() {
                 type="button"
                 disabled={!scanFile || scanning}
                 onClick={handleScan}
-                className="mt-5 w-full rounded-2xl bg-gradient-to-r from-[#4a7c2a] to-[#87b92d] px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-[0_0_32px_-10px_rgba(200,245,66,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-5 w-full rounded-2xl bg-gradient-to-r from-[#945474] to-[#f067b8] px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-[0_0_32px_-10px_rgba(255,148,208,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {scanning ? "Analyse Gemini…" : "Lire les valeurs nutritionnelles"}
               </button>
@@ -604,11 +604,11 @@ export default function NutritionApp() {
             </section>
 
             {scanResult && scanResult.length > 0 && (
-              <section className="card-organic rounded-3xl border border-[#4a7c2a]/35 bg-[#0f2210]/72 p-5 shadow-[0_0_32px_-14px_rgba(200,245,66,0.28)] backdrop-blur-md">
+              <section className="card-organic rounded-3xl border border-[#945474]/35 bg-[#1a141c]/72 p-5 shadow-[0_0_32px_-14px_rgba(255,148,208,0.28)] backdrop-blur-md">
                 <h3 className="mb-4 text-base font-semibold text-zinc-50">Résultats</h3>
                 <ul className="space-y-3">
                   {scanResult.map((it, i) => (
-                    <li key={i} className="rounded-xl border border-[#4a7c2a]/22 bg-black/35 px-4 py-3">
+                    <li key={i} className="rounded-xl border border-[#945474]/22 bg-black/35 px-4 py-3">
                       <div className="flex items-start justify-between gap-3">
                         <span className="text-sm font-medium text-zinc-100">{it.food_name}</span>
                         <span className="shrink-0 text-[10px] font-semibold uppercase text-zinc-500">
@@ -627,7 +627,7 @@ export default function NutritionApp() {
                   type="button"
                   disabled={addingScan}
                   onClick={handleAddScanToJournal}
-                  className="mt-6 w-full rounded-2xl border border-[#c8f542]/40 bg-transparent px-5 py-3.5 text-sm font-bold text-[#e8fdd0] shadow-[0_0_24px_-12px_rgba(200,245,66,0.45)] transition hover:bg-[#c8f542]/10 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="mt-6 w-full rounded-2xl border border-[#ff96c9]/40 bg-transparent px-5 py-3.5 text-sm font-bold text-[#ffe8f5] shadow-[0_0_24px_-12px_rgba(255,148,208,0.45)] transition hover:bg-[#ff96c9]/10 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {addingScan ? "Ajout…" : "Ajouter au journal"}
                 </button>
@@ -637,7 +637,7 @@ export default function NutritionApp() {
         )}
       </main>
 
-      <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-[#4a7c2a]/35 bg-[#061209]/85 px-4 py-3 backdrop-blur-xl supports-[padding:max(0px)]:pb-[max(12px,env(safe-area-inset-bottom))]">
+      <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-[#945474]/35 bg-[#0c0610]/85 px-4 py-3 backdrop-blur-xl supports-[padding:max(0px)]:pb-[max(12px,env(safe-area-inset-bottom))]">
         <div className="mx-auto flex max-w-lg gap-2">
           <TabButton active={tab === "dashboard"} onClick={() => setTab("dashboard")}>
             Tableau de bord
